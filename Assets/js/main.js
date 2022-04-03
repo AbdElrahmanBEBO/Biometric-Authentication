@@ -1,4 +1,10 @@
-// Change-Language
+$(document).ready(function() {
+    $('#attendance').DataTable({
+        "responsive" : true
+    });
+} );
+
+
 let Language = 'en';
 changeLang(Language);
 function changeLang(lang){
