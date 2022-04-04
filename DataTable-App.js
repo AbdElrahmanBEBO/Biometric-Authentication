@@ -3,18 +3,20 @@ $(document).ready(function() {
         "responsive" : true
     });
 
-    fetch('https://jsonplaceholder.typicode.com/posts')
-    .then(res => res.json())
-    .then(jsonFile => {
-        for (let i = 0; i < jsonFile.length; i++) {
-            table.row.add([
-                jsonFile[i].id,
-                jsonFile[i].userId,
-                jsonFile[i].title,
-                jsonFile[i].body]).draw(false);        
-        }
-        
-    })
+    async function getData(){
+        const retriveData = await fetch('https://jsonplaceholder.typicode.com/posts');
+        const jsonFile = await retriveData.json();
+            for (let i = 0; i < jsonFile.length; i++) {
+                table.row.add([
+                    jsonFile[i].id,
+                    jsonFile[i].title,
+                    jsonFile[i].userId,
+                    jsonFile[i].body]).draw(true)     
+            }
+            document.querySelectorAll('.table-Box')[0].style.transform = 'scale(1,1)'                
+            document.querySelectorAll('.table-Box')[0].style.width = '90%'                
+    }
+    getData();
 });
 
 function showPics(ele){
