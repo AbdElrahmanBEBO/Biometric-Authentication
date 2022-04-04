@@ -1,8 +1,3 @@
-$(document).ready(function() {
-    $('#attendance').DataTable({
-        "responsive" : true
-    });
-} );
 
 
 let Language = 'en';

@@ -1,0 +1,23 @@
+#pics-box{
+    position: absolute;
+    background: white;
+    border: 5px solid black;
+    padding: 50px;         
+
+    transition: all 1s;    
+    transition-delay: 0.5s;
+    transform: scale(0,0);
+}
+#student-pics{
+    border: 1px solid black;
+    border-radius: 50%;           
+}        
+#student-pics img{
+    width: 200px;
+    top: 40%;
+    left: 40%;
+}
+.student-icon{
+    width: 40px;
+    align-self: center;
+}

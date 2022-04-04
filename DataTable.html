@@ -7,288 +7,31 @@
 
         <link rel="stylesheet" href="Assets/css/BS-5/bootstrap.css">
         <link rel="stylesheet" href="Assets/css/main.css">
+        <link rel="stylesheet" href="./DataTable-Style.css">
         <script src="Assets/js/js_BS-5/bootstrap.bundle.js"></script>     
 
-        <style>        
-            #pics-box{
-                position: absolute;
-                background: white;
-                border: 5px solid black;
-                padding: 50px;         
-
-                transition: all 1s;    
-                transition-delay: 0.5s;
-                transform: scale(0,0);
-            }
-            #student-pics{
-                border: 1px solid black;
-                border-radius: 50%;           
-            }        
-            #student-pics img{
-                width: 200px;
-                top: 40%;
-                left: 40%;
-            }
-            .student-icon{
-                width: 40px;
-                align-self: center;
-            }
-
-        </style>                   
 
         <!-- data table -->
         <script src="Assets/Responsive DataTables/js/jquery-3.5.1.js"></script>
         <script src="Assets/Responsive DataTables/js/jquery.dataTables.min.js"></script>
         <script src="Assets/Responsive DataTables/js/dataTables.responsive.min.js"></script>
         <link rel="stylesheet" href="Assets/Responsive DataTables/css/jquery.dataTables.min.css">
-        <link rel="stylesheet" href="Assets/Responsive DataTables/css/responsive.dataTables.min.css">   
+        <link rel="stylesheet" href="Assets/Responsive DataTables/css/responsive.dataTables.min.css">     
     </head> 
     <body>
 
         <!-- DataTable -->
         <div class="table-Box">
-            <table id="attendance" class="display responsive table-bordered nowrap" style="width:100%">
+            <table id="attendance" class="display responsive table-bordered nowrap" style="width: 100%;">
                 <thead class="head-table">
                     <tr>
-                        <th>#</th>
-                        <th id="head-item-Id">Id</th>
-                        <th id="head-item-Name">Name</th>
-                        <th id="head-item-Username">Level</th>
-                        <th id="head-item-Phone">Attendance</th>
-                        <th id="head-item-Action">Action</th>
+                        <th>id</th>
+                        <th>date</th>
+                        <th>student-id</th>
+                        <th>attendance</th>
                     </tr>
                 </thead>
-                <tbody class="body-table">
-                    <tr>
-                        <td>1</td>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>Nixon</td>
-                        <td>System </td>
-                        <td>Edinburgh</td>                    
-                 
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td onmouseover="showStudentPics(this)">8422</td>
-                        <td>Winters</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>1562</td>
-                        <td>Cox</td>
-                        <td>Junior Technical Author</td>
-                        <td>San Francisco</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>6224</td>
-                        <td>Kelly</td>
-                        <td>Senior Javascript Developer</td>
-                        <td>Edinburgh</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>5407</td>
-                        <td>Satou</td>
-                        <td>Accountant</td>
-                        <td>Tokyo</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>4804</td>
-                        <td>Williamson</td>
-                        <td>Integration Specialist</td>
-                        <td>New York</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>9608</td>
-                        <td>Chandler</td>
-                        <td>Sales Assistant</td>
-                        <td>San Francisco</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>6200</td>
-                        <td>Davidson</td>
-                        <td>Integration Specialist</td>
-                        <td>Tokyo</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>2360</td>
-                        <td>Hurst</td>
-                        <td>Javascript Developer</td>
-                        <td>San Francisco</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>1667</td>
-                        <td>Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>1667</td>
-                        <td>Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                    <tr>
-                        <td onmouseover="showPics(this)" onmouseout="hidePics(this)">                
-                            <img src="./Assets/pics/ADD.png" class="student-icon">
-                        </td>
-                        <td>1667</td>
-                        <td>Frost</td>
-                        <td>Software Engineer</td>
-                        <td>Edinburgh</td>                    
-                        <td>
-                            <div>
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#close-modal">
-                                    <i class="fas fa-trash"></i>
-                                </button>                                                                         
-                                <button type="button" class="btn btn-primary action-edit" data-bs-toggle="modal" data-bs-target="#myModal" onclick="Content('mod-header','saveModalBtn','Mod-Header-Edit','EditBtn')">
-                                    <i class="fas fa-pen"></i>
-                                </button>                                                                         
-                            </div> 
-                        </td>
-                    </tr>
-                </tbody>
+                <tbody class="body-table"></tbody>
             </table>
         </div>
 
@@ -298,14 +41,7 @@
             </div>
         </div>
 
-        <script src="Assets/js/main.js"></script>
-        <script>
-            function showPics(ele){
-                document.getElementById("pics-box").style.transform = "scale(1,1)"
-            }
-            function hidePics(ele){
-                document.getElementById("pics-box").style.transform = "scale(0,0)";
-            }
-        </script>
+        <script src="./DataTable-app.js"></script>
+        <script src="./Assets/js/main.js"></script>
     </body>
 </html>
