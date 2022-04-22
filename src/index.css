@@ -11,14 +11,27 @@ tbody tr {
 }
 tbody tr td {
     width: 100%; height: 100%;
-    @apply flex items-center py-4 pl-4;
+    @apply flex items-center py-4 px-4;
     border: 1px solid black;
     font-weight: 600;
 }
 
-.studentName {
+.Attendance-Box div{
+    @apply mx-3 px-2 rounded-lg text-white;
+}
+
+.overflowX {
     white-space: nowrap;
     overflow-x : auto;
 }
 
+::-webkit-scrollbar {
+  width: 15px;
+  height: 5px;
+}
 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 25px;
+}
