@@ -4,9 +4,10 @@ export default [
         StudnetName: "وليد السيد عبد المبدى حجازى",
         StudentId: "140835",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },       
@@ -15,9 +16,10 @@ export default [
         StudnetName: "سماح عبد الحكيم عامر خضراوى",
         StudentId: "141034",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -26,9 +28,10 @@ export default [
         StudnetName: "يوسف جابر ربيع جودة",
         StudentId: "1527276",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -37,9 +40,10 @@ export default [
         StudnetName: "احمد عامر احمد عبد الرازق عفيفى",
         StudentId: "1627003",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -48,9 +52,10 @@ export default [
         StudnetName: "عمر محمد ابو المكارم متولى",
         StudentId: "1627054",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -59,9 +64,10 @@ export default [
         StudnetName: "اسراء محمود عصمت حنفى محمود سليمان",
         StudentId: "1627199",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -70,9 +76,10 @@ export default [
         StudnetName: "محمد محمود رشاد محمد",
         StudentId: "1627212",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -81,9 +88,10 @@ export default [
         StudnetName: "رانيا اشرف محمود احمد",
         StudentId: "1627213",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -92,9 +100,10 @@ export default [
         StudnetName: "عمر عبد الرازق محمد قبيصى محمد",
         StudentId: "1627243",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -103,9 +112,10 @@ export default [
         StudnetName: "كريم السيد احمد محمد الكاشف",
         StudentId: "1727098",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -114,9 +124,10 @@ export default [
         StudnetName: "عبد الرحمن على محمد على حجو",
         StudentId: "1727103",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -125,9 +136,10 @@ export default [
         StudnetName: "يمنى ايمن محمد وحيد الدين",
         StudentId: "1727108",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -136,9 +148,10 @@ export default [
         StudnetName: "يوسف ايهاب زكريا عبدالمنعم",
         StudentId: "1727139",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -147,9 +160,10 @@ export default [
         StudnetName: "هايدى سعيد عبد الله سعيد",
         StudentId: "1727143",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -158,9 +172,10 @@ export default [
         StudnetName: "اسلام عابد على محمد",
         StudentId: "1727150",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -169,9 +184,10 @@ export default [
         StudnetName: "احمد جمال احمد زكى",
         StudentId: "1727163",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -180,9 +196,10 @@ export default [
         StudnetName: "محمد عبد الناصر رجب عمر غنيم",
         StudentId: "1727181",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -191,9 +208,10 @@ export default [
         StudnetName: "احمد حنفى عبد الفتاح دمرداش ابوجبل",
         StudentId: "1727218",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -202,9 +220,10 @@ export default [
         StudnetName: "عمر احمد مصطفى جوهرى",
         StudentId: "1727247",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -213,9 +232,10 @@ export default [
         StudnetName: "شروق سعيد احمد السيد",
         StudentId: "1727258",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -224,9 +244,10 @@ export default [
         StudnetName: "اسراء مجدى عبد الهادى",
         StudentId: "1727265",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -235,9 +256,10 @@ export default [
         StudnetName: "احمد محمد احمد خضير",
         StudentId: "1827001",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -246,9 +268,10 @@ export default [
         StudnetName: "محمد سعيد عبد الحميد بدر",
         StudentId: "1827002",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -257,9 +280,10 @@ export default [
         StudnetName: "ايه شريف محمد محمد على",
         StudentId: "1827008",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -268,9 +292,10 @@ export default [
         StudnetName: "شيرين رضا محمد السيدهاشم",
         StudentId: "1827010",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -279,9 +304,10 @@ export default [
         StudnetName: "عاصم مسعد سيد زيدان",
         StudentId: "1827012",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -290,9 +316,10 @@ export default [
         StudnetName: "مصطفى احمد عبد الحافظ سليم",
         StudentId: "1827013",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -301,9 +328,10 @@ export default [
         StudnetName: "مارينا عبد الملاك بشاره سعد",
         StudentId: "1827014",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -312,9 +340,10 @@ export default [
         StudnetName: "مى محمد احمد حسن رفاعى",
         StudentId: "1827016",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -323,9 +352,10 @@ export default [
         StudnetName: "هيام صلاح عزيز محمد على",
         StudentId: "1827022",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -334,9 +364,10 @@ export default [
         StudnetName: "عمر عبد الباسط طه محمد",
         StudentId: "1827025",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -345,9 +376,10 @@ export default [
         StudnetName: "عبد الرحمن محمد سيد احمد بيومي",
         StudentId: "1827027",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -356,9 +388,10 @@ export default [
         StudnetName: "احمد محمد احمد عبد الشكور",
         StudentId: "1827028",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -367,9 +400,10 @@ export default [
         StudnetName: "يوسف مجدى عبده سويلم",
         StudentId: "1827034",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -378,9 +412,10 @@ export default [
         StudnetName: "احمد سيد عبد الحميد عبد الحميد",
         StudentId: "1827036",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -389,9 +424,10 @@ export default [
         StudnetName: "محمود سعد احمد محمد",
         StudentId: "1827040",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -400,9 +436,10 @@ export default [
         StudnetName: "اية عباس محمد كرار",
         StudentId: "1827042",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -411,9 +448,10 @@ export default [
         StudnetName: "اسراء عبد الناصر محمد حسن",
         StudentId: "1827054",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -422,9 +460,10 @@ export default [
         StudnetName: "اسلام محى الدين عبد الباقى امام وهبه",
         StudentId: "1827057",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -433,9 +472,10 @@ export default [
         StudnetName: "محمد خالد حماد على",
         StudentId: "1827068",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -444,9 +484,10 @@ export default [
         StudnetName: "ايه صبحي محمد احمد",
         StudentId: "1827074",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -455,9 +496,10 @@ export default [
         StudnetName: "زينب محمد عوض فرج",
         StudentId: "1827091",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -466,9 +508,10 @@ export default [
         StudnetName: "احمد اشرف محمد احمد",
         StudentId: "1827095",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -477,9 +520,10 @@ export default [
         StudnetName: "هيام طارق فتحى محمد على",
         StudentId: "1827119",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -488,9 +532,10 @@ export default [
         StudnetName: "سلفيا عماد حلمى صادق",
         StudentId: "1827120",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -499,9 +544,10 @@ export default [
         StudnetName: "محمود محمد ابوالفتوح محمد",
         StudentId: "1827126",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -510,9 +556,10 @@ export default [
         StudnetName: "يوسف علاءالدين محمد محمود",
         StudentId: "1827127",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -521,9 +568,10 @@ export default [
         StudnetName: "عمرو وجيه محمد السعيد عبدالرحمن",
         StudentId: "1827133",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -532,9 +580,10 @@ export default [
         StudnetName: "الاء محمود نصر محمد عبد الله",
         StudentId: "1827137",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -543,9 +592,10 @@ export default [
         StudnetName: "ايمان محمد مصطفى كمال عبد الفتاح",
         StudentId: "1827138",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -554,9 +604,10 @@ export default [
         StudnetName: "ساره سمير عبدالقادر عبد العليم طايل",
         StudentId: "1827150",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -565,9 +616,10 @@ export default [
         StudnetName: "بسمله محمد السيد مرسي كشك",
         StudentId: "1827154",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -576,9 +628,10 @@ export default [
         StudnetName: "دعاء عبده حسين حامد",
         StudentId: "1827181",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -587,9 +640,10 @@ export default [
         StudnetName: "محمد ابراهيم صبرى ابراهيم",
         StudentId: "1827183",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -598,9 +652,10 @@ export default [
         StudnetName: "اسلام محمود عبد المجيد محمد احمد",
         StudentId: "1827193",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -609,9 +664,10 @@ export default [
         StudnetName: "سيد خالد سيد عبده الغندور",
         StudentId: "1827195",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -620,9 +676,10 @@ export default [
         StudnetName: "محمود خالد سعيد المنشاوى",
         StudentId: "1827205",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -631,9 +688,10 @@ export default [
         StudnetName: "جورج عصام حلمى يسي",
         StudentId: "1827213",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -642,9 +700,10 @@ export default [
         StudnetName: "شروق مسعد عبد الهادى عامر",
         StudentId: "1827222",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -653,9 +712,10 @@ export default [
         StudnetName: "احمد حسين سالم احمد",
         StudentId: "1827230",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -664,9 +724,10 @@ export default [
         StudnetName: "عمر محمد عبدالله احمد",
         StudentId: "1827237",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -675,9 +736,10 @@ export default [
         StudnetName: "محمود محمد على محمود على",
         StudentId: "1827239",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -686,9 +748,10 @@ export default [
         StudnetName: "رفيف عصام علي الماحي",
         StudentId: "1827250",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -697,9 +760,10 @@ export default [
         StudnetName: "محمد سعيد عيد مصطفى",
         StudentId: "1827254",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -708,9 +772,10 @@ export default [
         StudnetName: "محمد عاطف محمد ربيع",
         StudentId: "1827257",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -719,9 +784,10 @@ export default [
         StudnetName: "عمر ماهر زكريا مصطفى",
         StudentId: "1827261",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -730,9 +796,10 @@ export default [
         StudnetName: "محمد عادل حسن المشهور فرغلى على حسن",
         StudentId: "1827265",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -741,9 +808,10 @@ export default [
         StudnetName: "عبد الرحمن احمد عبد المتجلى سعيد",
         StudentId: "1827273",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -752,9 +820,10 @@ export default [
         StudnetName: "ياسر محمد عبد المنعم على",
         StudentId: "1827290",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -763,9 +832,10 @@ export default [
         StudnetName: "اسماء عبد الفتاح محمد",
         StudentId: "1827300",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -774,9 +844,10 @@ export default [
         StudnetName: "احمد على حسن محمد",
         StudentId: "1827308",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -785,9 +856,10 @@ export default [
         StudnetName: "عبد الرحمن رمضان عبد التواب",
         StudentId: "1827315",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -796,9 +868,10 @@ export default [
         StudnetName: "رضا محمد توفيق",
         StudentId: "1828717",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -807,9 +880,10 @@ export default [
         StudnetName: "تقى هشام اسماعيل عبد اللطيف",
         StudentId: "1831056",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -818,9 +892,10 @@ export default [
         StudnetName: "ضياء جمال محروس عباس",
         StudentId: "1927284",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
@@ -829,9 +904,10 @@ export default [
         StudnetName: "علي أحمد فؤاد فؤاد عطا الله",
         StudentId: "2470123",
         Attendance: [
-            false, false, false, false, false, false, false, 
+            true, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
+        lastAttend : 1,
         Participation: "0",
         View: false
     },
