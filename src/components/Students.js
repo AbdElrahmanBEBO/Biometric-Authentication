@@ -4,7 +4,7 @@ export default [
         StudnetName: "وليد السيد عبد المبدى حجازى",
         StudentId: "140835",
         Attendance: [
-            true, false, true, false, false, false, false, 
+            false, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
         Participation: "0",

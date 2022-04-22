@@ -42,11 +42,11 @@ export default function DataTable() {
               return (
                 <div
                   key={index}
-                  style={{background: item ? "green": "red"}}
+                  style={{ background: item ? "#198754" : "red" }}
                 >
                   {index + 1}
                 </div>
-              )
+              );
             })}
           </td>
           <td className="hidden 2xl:grid">{studenInfo.Participation}</td>
