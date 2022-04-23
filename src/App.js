@@ -1,11 +1,20 @@
 import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom"
 
-import DataTable from "./components/DataTable"
+import Reports from "./Pages/Reports/Reports"
+import Navbar from "./Pages/Navbar"
 
 export default function App() {
   return (
-    <div>
-        <DataTable />
-    </div>
+    <Router>      
+      <Navbar />
+      <Routes>
+        <Route path='/Home'/>
+        <Route path='/Reports' element={<Reports />}/>
+        <Route path='/SignUp'/>
+        <Route path='/SignIn'/>
+        <Route path='*'/>
+      </Routes>
+    </Router>
   );
 }

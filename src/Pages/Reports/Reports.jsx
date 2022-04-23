@@ -1,25 +1,17 @@
 import React from "react";
 
-import Students from "./Students";
+//List and Check Icons
 import { MdFormatListBulleted } from "react-icons/md";
 import { BsCheckCircleFill } from "react-icons/bs";
 
-export default function DataTable() {
+//Array of Students
+import Students from "./studentData";
+
+export default function Reports() {
   const [StudentsData, updateStudents] = React.useState(Students);
 
-  function toggleViewMenu(Key) {
-    updateStudents((prevData) => {
-      return prevData.map((studentContent) => {
-        return studentContent.Code === Key
-          ? { ...studentContent, View: !studentContent.View }
-          : studentContent;
-      });
-    });
-  }
-
-
-
-  const StudentsView = StudentsData.map((studenInfo) => {
+  //Student Data Body (Row by Row)
+  const StudentsBody = StudentsData.map((studenInfo) => {
     return (
       <>
         <tr
@@ -28,10 +20,11 @@ export default function DataTable() {
             text-3xl justify-between items-center
           "
         >
+          {/* Student Code */}
           <td className="flex justify-between">
             <div className="flex">
               <MdFormatListBulleted
-                className="bg-black rounded-lg p-1 text-4xl text-white font-black mr-4 2xl:hidden"
+                className="p-1 mr-4 bg-black text-white text-4xl rounded-lg 2xl:hidden"
                 onClick={() => toggleViewMenu(studenInfo.Code)}
               />
               {studenInfo.Code}
@@ -41,10 +34,15 @@ export default function DataTable() {
             )}
           </td>
 
+          {/* Student Id */}
           <td className="hidden sm:grid">{studenInfo.StudentId}</td>
+
+          {/* Student Name */}
           <td className="hidden lg:grid col-span-2 overflowX" dir="rtl">
             {studenInfo.StudnetName}
           </td>
+
+          {/* Student Attendace  */}
           <td className="hidden xl:flex overflowX Attendance-Box">
             {studenInfo.Attendance.map((item, index) => {
               return (
@@ -61,6 +59,8 @@ export default function DataTable() {
               );
             })}
           </td>
+
+          {/* Student Participation */}
           <td className="hidden 2xl:flex 2xl:justify-center">
             <input
               type="text"
@@ -71,20 +71,25 @@ export default function DataTable() {
           </td>
         </tr>
 
+        {/* Responsive View of StudentData */}
         {studenInfo.View && (
           <div className="flex flex-col text-4xl p-3 m-3 border-green-400 border-4 2xl:hidden">
+            {/* Student Code */}
             <div className="sm:hidden flex flex-col sm:flex-row justify-between py-2 my-2 ">
               <div>StudentId </div>
               {studenInfo.StudentId}
             </div>
+
+            {/* Student Id */}
             <div className="lg:hidden flex flex-col sm:flex-row justify-between py-2 my-2 ">
               <div>StudentName</div>
               <div dir="rtl">{studenInfo.StudnetName}</div>
             </div>
+
+            {/* Student Attendace  */}
             <div className="xl:hidden flex flex-col justify-between py-2 my-2 ">
               <div>Attendance</div>
-
-              <div className="grid grid-cols-3 sm:flex text-white">
+              <div className="grid grid-cols-3 sm:grid-cols-8 lg:flex text-white">
                 {studenInfo.Attendance.map((item, index) => {
                   return (
                     <div
@@ -102,12 +107,13 @@ export default function DataTable() {
                 })}
               </div>
             </div>
-            <div className="2xl:hidden flex flex-col sm:flex-row items-center justify-between py-2 my-2 ">
+
+            {/* Student Participation */}
+            <div className="2xl:hidden flex flex-col sm:flex-row items-center justify-between py-2 my-2">
               <div className="mb-3">Participation </div>
               <input
                 style={{ width: "200px" }}
                 className="py-1 px-3 border-black border-1"
-                type="text"
                 value={studenInfo.Participation}
               />
             </div>
@@ -117,13 +123,23 @@ export default function DataTable() {
     );
   });
 
+  function toggleViewMenu(Key) {
+    updateStudents((prevData) => {
+      return prevData.map((studentContent) => {
+        return studentContent.Code === Key
+          ? { ...studentContent, View: !studentContent.View }
+          : studentContent;
+      });
+    });
+  }
+
   return (
     <table className="grid items-center my-9 mx-12 border-2 border-black">
       <thead className="bg-black text-white sticky top-0">
         <tr
           className="
-          grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
-          justify-between items-center text-3xl
+           grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
+           justify-between items-center text-3xl
         "
         >
           <th className="">Code</th>
@@ -133,8 +149,7 @@ export default function DataTable() {
           <th className="hidden 2xl:grid">Participation</th>
         </tr>
       </thead>
-
-      <tbody>{StudentsView}</tbody>
+      <tbody>{StudentsBody}</tbody>
     </table>
   );
 }

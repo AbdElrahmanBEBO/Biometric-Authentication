@@ -4,7 +4,7 @@ export default [
         StudnetName: "وليد السيد عبد المبدى حجازى",
         StudentId: "140835",
         Attendance: [
-            true, false, false, false, false, false, false, 
+            false, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
         lastAttend : 1,
@@ -28,7 +28,7 @@ export default [
         StudnetName: "يوسف جابر ربيع جودة",
         StudentId: "1527276",
         Attendance: [
-            true, false, false, false, false, false, false, 
+            false, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
         lastAttend : 1,
@@ -64,7 +64,7 @@ export default [
         StudnetName: "اسراء محمود عصمت حنفى محمود سليمان",
         StudentId: "1627199",
         Attendance: [
-            true, false, false, false, false, false, false, 
+            false, false, false, false, false, false, false, 
             false, false, false, false, false, false, false,
         ],
         lastAttend : 1,
