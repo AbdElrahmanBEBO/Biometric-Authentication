@@ -8,13 +8,14 @@ export default function App() {
   return (
     <Router>      
       <Navbar />
-      <Routes>
+      <Reports />      
+      {/* <Routes>
         <Route path='/Home'/>
         <Route path='/Reports' element={<Reports />}/>
         <Route path='/SignUp'/>
         <Route path='/SignIn'/>
         <Route path='*'/>
-      </Routes>
+      </Routes> */}
     </Router>
   );
 }
