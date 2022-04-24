@@ -135,7 +135,7 @@ export default function Reports() {
 
   return (
     <table className="grid items-center my-9 mx-12 border-2 border-black">
-      <thead className="bg-black text-white sticky top-0">
+      <thead className="bg-black text-white">
         <tr
           className="
            grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-6
@@ -149,7 +149,7 @@ export default function Reports() {
           <th className="hidden 2xl:grid">Participation</th>
         </tr>
       </thead>
-      <tbody>{StudentsBody}</tbody>
+      <tbody >{StudentsBody}</tbody>
     </table>
   );
 }
