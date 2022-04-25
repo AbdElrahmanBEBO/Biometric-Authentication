@@ -5,7 +5,7 @@ import { MdFormatListBulleted } from "react-icons/md";
 import { BsCheckCircleFill } from "react-icons/bs";
 
 //Array of Students
-import Students from "./studentData";
+import Students from "../studentData";
 
 export default function Reports() {
   const [StudentsData, updateStudents] = React.useState(Students);
