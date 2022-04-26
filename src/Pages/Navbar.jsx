@@ -6,7 +6,7 @@ export default function Navbar() {
 
   return (
     <nav
-      className="
+      className=" 
             overflow-visible flex justify-between items-center bg-black sticky top-0 text-white p-5
             border-b-2 border-[aqua] 
         "
