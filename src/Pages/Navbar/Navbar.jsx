@@ -11,31 +11,44 @@ export default function Navbar() {
             border-b-2 border-[aqua] 
         "
     >
-      <div className="flex items-center flex-shrink-0  mr-6">
+      <div
+        className={`
+          ${!viewMenu ? "flex" : "hidden"}
+          items-center flex-shrink-0  mr-6
+        `}
+      >
         <span className="font-bold text-xl tracking-tight">
           Student Attendance
         </span>
       </div>
+
       <div
-        className={`Navbar-Links 
-        ${viewMenu ? "grid mx-9" : "hidden"}
-        w-full block flex-grow items-center w-auto sm:flex justify-end`}
+        className={`
+          ${viewMenu ? "flex text-sm" : "hidden"}
+          Navbar-Links w-full sm:flex sm:justify-end items-start
+        `}
       >
-        <a href="/home">Home</a>
+        <a href="/">Home</a>
         <a href="/reports">Reports</a>
         <a href="/SignUp">SignUp</a>
         <a href="/SignIn">SignIn</a>
         <a href="/ViewCam">Camera</a>
       </div>
-      <div className="block sm:hidden">
+
+      <div className="sm:hidden">
         <button
           className="
-           flex items-center px-3 py-2 border rounded text-teal-200 
-           border-teal-400 hover:text-white hover:border-white
+           flex items-center px-3 py-2 border rounded 
+           hover:text-white hover:border-white
           "
           onClick={() => setViewMenu((prevState) => !prevState)}
         >
-          <BsList className=" h-6 w-6 bg-black" />
+          <BsList
+            className={`
+             ${viewMenu ? "text-[aqua]" : "text-white"}
+             h-6 w-6 bg-black
+            `}
+          />
         </button>
       </div>
     </nav>
