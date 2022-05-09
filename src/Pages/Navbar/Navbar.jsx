@@ -23,8 +23,9 @@ export default function Navbar() {
       >
         <a href="/home">Home</a>
         <a href="/reports">Reports</a>
-        <a href="/SignUp">Sign Up</a>
-        <a href="/SignIn">Sign In</a>
+        <a href="/SignUp">SignUp</a>
+        <a href="/SignIn">SignIn</a>
+        <a href="/ViewCam">Camera</a>
       </div>
       <div className="block sm:hidden">
         <button

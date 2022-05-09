@@ -1,7 +1,7 @@
 import React from "react";
 import background from "../../assets/BG.jpg";
 
-import Students from "../studentData";
+import Students from "../Reports/studentData";
 
 export default function SignUp() {
   return (
