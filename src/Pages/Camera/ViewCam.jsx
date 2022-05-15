@@ -26,7 +26,7 @@ export default function ViewCam() {
         Capture photo
       </button>
 
-      <div className="grid grid-cols-5 overflow-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 overflow-auto">
         {imgSrc.map((img) => {
           return <img className="w-20 h-20 m-5" src={img} />;
         })}
