@@ -2,7 +2,7 @@ import React from "react";
 
 //List and Check Icons
 import { MdFormatListBulleted } from "react-icons/md";
-import { BsCheckCircleFill } from "react-icons/bs";
+import { RiNumber1 } from "react-icons/ri";
 
 //Array of Students
 import Students from "./studentData";
@@ -30,7 +30,9 @@ export default function Reports() {
               {studenInfo.Code}
             </div>
             {studenInfo.Attendance[studenInfo.lastAttend - 1] && (
-              <BsCheckCircleFill className="text-green-500" />
+              <div className="px-2 mx-3 rounded-lg bg-green-500 text-white" >
+                {studenInfo.lastAttend}
+              </div>
             )}
           </td>
 
@@ -60,14 +62,9 @@ export default function Reports() {
             })}
           </td>
 
-          {/* Student Participation */}
+          {/*  total attendance */}
           <td className="hidden 2xl:flex 2xl:justify-center">
-            <input
-              type="text"
-              style={{ width: "230px" }}
-              className="py-1 px-3 border-black border-1"
-              value={studenInfo.Participation}
-            />
+            <div>{studenInfo.totalAttendance}</div>
           </td>
         </tr>
 
@@ -108,14 +105,9 @@ export default function Reports() {
               </div>
             </div>
 
-            {/* Student Participation */}
+            {/*  total attendance  */}
             <div className="2xl:hidden flex flex-col sm:flex-row items-center justify-between py-2 my-2">
-              <div className="mb-3">Participation </div>
-              <input
-                style={{ width: "200px" }}
-                className="py-1 px-3 border-black border-1"
-                value={studenInfo.Participation}
-              />
+              <div className="mb-3"> total attendance:   {studenInfo. totalAttendance} </div>
             </div>
           </div>
         )}
@@ -146,7 +138,7 @@ export default function Reports() {
           <th className="hidden sm:grid">Student Id</th>
           <th className="hidden lg:grid col-span-2">Student Name</th>
           <th className="hidden xl:grid">Attendance</th>
-          <th className="hidden 2xl:grid">Participation</th>
+          <th className="hidden 2xl:grid">Total Attendance</th>
         </tr>
       </thead>
       <tbody >{StudentsBody}</tbody>
