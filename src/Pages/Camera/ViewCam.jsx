@@ -10,10 +10,6 @@ export default function ViewCam() {
     setImgSrc((prev) => [...prev, imageSrc]);
   }
 
-  let date = new Date();
-  let sec = date.getSeconds();
-
-
   return (
     <div className="flex flex-col justify-center items-center m-5">
       <Webcam
