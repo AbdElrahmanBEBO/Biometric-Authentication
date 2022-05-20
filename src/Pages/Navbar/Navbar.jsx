@@ -29,9 +29,9 @@ export default function Navbar() {
         `}
       >
         <a href="/">Home</a>
-        <a href="/reports">Reports</a>
-        <a href="/SignUp">SignUp</a>
-        <a href="/SignIn">SignIn</a>
+        <a href="/Courses">My Courses</a>
+        <a href="/SignUp">Sign Up</a>
+        <a href="/SignIn">Sign In</a>
         <a href="/ViewCam">Camera</a>
       </div>
 

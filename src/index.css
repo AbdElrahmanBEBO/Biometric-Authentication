@@ -44,5 +44,8 @@ tbody tr td {
 }
 
 .Navbar-Links a{
-    @apply block mt-4 sm:inline-block sm:mt-0 text-teal-200 hover:text-white mr-4
+    @apply flex text-teal-200 hover:text-white text-[13px] mr-3 sm:mr-6 sm:text-[16px];
+}
+.home-links a{
+    @apply flex justify-center font-bold text-xl m-2 p-2 rounded-sm bg-[orange] hover:bg-[orange]/[0.9] w-[90%];
 }
