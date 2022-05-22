@@ -16,15 +16,13 @@ export default function SignIn() {
     password: "",
   });
 
-  function LogIn(event) {
+  function LogIn() {
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     let dataInput = inputType ? instructorState : studentState;
     axios
       .post(inputUrl, dataInput)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
-    
-    event.preventDefault();
   }
 
   function setData(event) {
@@ -32,10 +30,7 @@ export default function SignIn() {
     inputType
       ? setInstructorState((prev) => ({ ...prev, [name]: value }))
       : setStuedentState((prev) => ({ ...prev, [name]: value }));
-
   }
-  console.log(instructorState)
-  console.log(studentState)
 
   return (
     <div
@@ -48,7 +43,10 @@ export default function SignIn() {
       <div className="lg:mr-[230px] flex flex-col">
         <div className="flex justify-between mb-3">
           <button
-            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-green-500":"bg-white hover:bg-white/[0.8]")  }
+            className={
+              " w-[49%] p-2 rounded-sm font-bold " +
+              (inputType ? "bg-green-500" : "bg-white hover:bg-white/[0.8]")
+            }
             onClick={() => {
               setInputType(true);
               setInputUrl("/instructors/login");
@@ -56,8 +54,11 @@ export default function SignIn() {
           >
             as Instructor
           </button>
-          <button        
-            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-white hover:bg-white/[0.8]":"bg-green-500") }
+          <button
+            className={
+              " w-[49%] p-2 rounded-sm font-bold " +
+              (inputType ? "bg-white hover:bg-white/[0.8]" : "bg-green-500")
+            }
             onClick={() => {
               setInputType(false);
               setInputUrl("/students/login");
@@ -92,7 +93,9 @@ export default function SignIn() {
               name="password"
               type="password"
               placeholder="******************"
-              value={inputType ? instructorState.password : studentState.password}
+              value={
+                inputType ? instructorState.password : studentState.password
+              }
               onChange={setData}
               required
             />

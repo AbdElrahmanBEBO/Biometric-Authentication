@@ -7,7 +7,7 @@ import { RiInsertRowBottom } from "react-icons/ri";
 export default function SignUp() {
   const [inputType, setInputType] = React.useState(true);
   const [inputUrl, setInputUrl] = React.useState("/instructor/signup");
-
+  const fileRef = React.useRef();
   
   const [instructorData, setInstructorData] = React.useState({
     name: "",
@@ -16,19 +16,39 @@ export default function SignUp() {
   const [StudentData, setStudentData] = React.useState({
     name: "",
     code: "",
+    imageURL: "",
     password: "",
   });
   
-  function Sign_Up(event) {
+  async function Sign_Up() {
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     let dataInput = inputType ? instructorData : StudentData;
-    axios
-    .post(inputUrl, dataInput)
-    .then((response) => console.log(response))
-    .catch((error) => console.log(error));
-    event.preventDefault();
-  }
 
+    const file = fileRef.current.files[0];
+   
+    const fileName = file.name;
+    const type = file.type;
+    const response = await fetch(`https://ey5anj8005.execute-api.us-east-2.amazonaws.com/dev/createpresignedurl/${fileName}?filetype=${type}`);
+    const presignedUrl = await response.json();
+   
+    fetch(presignedUrl.postURL, {
+      method: 'PUT',
+      body: file,
+      Headers: {
+        ContentType: type
+      }
+    }).then(res => {
+      
+      if (res.statusText === "OK") {
+        dataInput.imageURL = presignedUrl.getURL;
+        axios
+          .post(inputUrl, dataInput)
+          .then((response) => console.log(response))
+          .catch((error) => console.log(error));
+            
+      }
+    })
+  }
   function setData(event) {
     const { name, value } = event.target;
     inputType
@@ -36,8 +56,6 @@ export default function SignUp() {
       : setStudentData((prev) => ({ ...prev, [name]: value }));
 
   }
-  console.log(instructorData)
-  console.log(StudentData)
 
   return (
     <div
@@ -92,7 +110,6 @@ export default function SignUp() {
               className="SignUp-Input"
               name="code"
               type="number"
-              pattern="([1|2][0-9](27|28)[0-9]{3})"
               placeholder="Code"
               onChange={(event) => setData(event)}
               required
@@ -114,7 +131,7 @@ export default function SignUp() {
           {(!inputType &&
             <div className="mb-3">
               <label className="SignUp-Label">Choose your photos</label>
-              <input className="SignUp-Input" name="file" type="file" multiple />
+              <input className="SignUp-Input" ref={fileRef} name="file" type="file" multiple />
             </div>
           )}
 
