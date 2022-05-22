@@ -2,21 +2,24 @@ import React from "react";
 
 import background from "../../assets/BG.jpg";
 import axios from "axios";
+import { RiInsertRowBottom } from "react-icons/ri";
 
 export default function SignUp() {
+
+  
   const [inputType, setInputType] = React.useState(true);
   const [StudentData, setStudentData] = React.useState({
     name: "",
     code: "",
     password: "",
   });
-
+  
   function Sign_Up() {
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     axios
-      .post("/students/signup", StudentData)
-      .then((response) => console.log(response))
-      .catch((error) => console.log(error));
+    .post("/students/signup", StudentData)
+    .then((response) => console.log(response))
+    .catch((error) => console.log(error));
   }
 
   function setData(event) {
@@ -25,6 +28,7 @@ export default function SignUp() {
       return { ...prevState, [name]: value };
     });
   }
+
 
   return (
     <div
@@ -50,7 +54,7 @@ export default function SignUp() {
               setInputType(false);
             }}
           >
-            as Students
+            as Student
           </button>
         </div>
 

@@ -22,18 +22,19 @@ export default function SignIn() {
       .post(inputUrl, dataInput)
       .then((response) => console.log(response))
       .catch((error) => console.log(error));
+    
+    event.preventDefault();
   }
 
   function setData(event) {
     const { name, value } = event.target;
     inputType
-      ? setInstructorState((prev) => {
-          return { ...prev, [name]: value };
-        })
-      : setStuedentState((prev) => {
-          return { ...prev, [name]: value };
-        });
+      ? setInstructorState((prev) => ({ ...prev, [name]: value }))
+      : setStuedentState((prev) => ({ ...prev, [name]: value }));
+
   }
+  console.log(instructorState)
+  console.log(studentState)
 
   return (
     <div
@@ -61,7 +62,7 @@ export default function SignIn() {
               setInputUrl("/students/login");
             }}
           >
-            as Students
+            as Student
           </button>
         </div>
         <form
@@ -75,8 +76,8 @@ export default function SignIn() {
             <input
               className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
               name={inputType ? "name" : "code"}
-              pattern="([1|2][0-9](27|28)[0-9]{3})"
               placeholder={inputType ? "Name" : "Code"}
+              value={inputType ? instructorState.name : studentState.code}
               onChange={setData}
               required
             />
@@ -87,9 +88,10 @@ export default function SignIn() {
             </label>
             <input
               className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
+              name="password"
               type="password"
               placeholder="******************"
+              value={inputType ? instructorState.password : studentState.password}
               onChange={setData}
               required
             />
