@@ -1,89 +1,114 @@
 import React from "react";
-import background from "../../assets/BG.jpg";
 
-import Students from "../Reports/studentData";
+import background from "../../assets/BG.jpg";
+import axios from "axios";
 
 export default function SignUp() {
+  const [inputType, setInputType] = React.useState(true);
+  const [StudentData, setStudentData] = React.useState({
+    name: "",
+    code: "",
+    password: "",
+  });
+
+  function Sign_Up() {
+    axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
+    axios
+      .post("/students/signup", StudentData)
+      .then((response) => console.log(response))
+      .catch((error) => console.log(error));
+  }
+
+  function setData(event) {
+    const { name, value } = event.target;
+    setStudentData((prevState) => {
+      return { ...prevState, [name]: value };
+    });
+  }
+
   return (
     <div
       className="    
         flex justify-center lg:justify-end items-center	
-        h-[calc(100vh-70px)] bg-fixed bg-cover bg-center bg-no-repeat 
+        h-[100vh] bg-fixed bg-cover bg-center bg-no-repeat 
       "
-      style={{backgroundImage: `url(${background})`}}
+      style={{ backgroundImage: `url(${background})` }}
     >
-      <div className="lg:mr-[230px]">
+      <div className="lg:mr-[230px] flex flex-col">
+        <div className="flex justify-between mb-3">
+          <button
+            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+            onClick={() => {
+              setInputType(true);
+            }}
+          >
+            as Instructor
+          </button>
+          <button
+            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+            onClick={() => {
+              setInputType(false);
+            }}
+          >
+            as Students
+          </button>
+        </div>
+
         <form
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[350px]"
-          method="post"
-        >
+          onSubmit={Sign_Up}
+        >          
           <div className="mb-3">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Code
-            </label>
+            <label className="SignUp-Label">Name</label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="code"
+              className="SignUp-Input"
+              name="name"
+              type="text"
+              placeholder="Name"
+              onChange={(event) => setData(event)}
+              required
+            />
+          </div>
+
+          { (!inputType && 
+          <div className="mb-3">
+            <label className="SignUp-Label">Code</label>
+            <input
+              className="SignUp-Input"
+              name="code"
               type="number"
               pattern="([1|2][0-9](27|28)[0-9]{3})"
               placeholder="Code"
+              onChange={(event) => setData(event)}
               required
             />
           </div>
+          )}
           <div className="mb-3">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Name
-            </label>
+            <label className="SignUp-Label">Password</label>
             <input
-              className="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"
-              id="name"
-              type="text"
-              placeholder="Name"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Password
-            </label>
-            <input
-              className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="password"
+              className="SignUp-Input"
+              name="password"
               type="password"
-              placeholder="******************"
+              placeholder="*********"
+              onChange={(event) => setData(event)}
               required
             />
           </div>
-          {/* confirm password*/}
-          <div className="mb-3">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Confirm Password
-            </label>
-            <input
-              className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="confirmPassword"
-              type="password"
-              placeholder="******************"
-              required
-            />
-          </div>
-          <div className="mb-3">
-            <label className="block text-gray-700 text-sm font-bold mb-2">
-              Choose your photos
-            </label>
-            <input
-              className="shadow appearance-none border  rounded w-full py-2 px-3 text-gray-700 mb-3 leading-tight focus:outline-none focus:shadow-outline"
-              id="file"
-              type="file"
-              multiple
-              required
-            />
-          </div>
+
+          {(!inputType &&
+            <div className="mb-3">
+              <label className="SignUp-Label">Choose your photos</label>
+              <input className="SignUp-Input" name="file" type="file" multiple />
+            </div>
+          )}
+
           <div className="flex items-center justify-between">
             <button
-              className="bg-black hover:bg-teal-400 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-              type="button"
-              onClick={Sign_up}
+              className="
+              bg-black hover:bg-teal-400 text-white 
+                font-bold py-2 px-4 rounded focus:outline-none focus:shadow
+              "
             >
               Sign Up
             </button>
@@ -92,39 +117,4 @@ export default function SignUp() {
       </div>
     </div>
   );
-}
-
-// SignIn function
-function Sign_up() {
-  var code = document.getElementById("code").value;
-  var mach = code.match(/([1|2][0-9](27|28)[0-9]{3})/);
-  var name = document.getElementById("name").value;
-  var password = document.getElementById("password").value;
-  var confirmPassword = document.getElementById("confirmPassword").value;
-  var file = document.getElementById("file").files;
-
-  if (password === confirmPassword) {
-    if (mach) {
-      // var data = {
-      //     code: code,
-      //     name: name,
-      //     password: password,
-      //     // file: file
-      // }
-      // var json = JSON.stringify(data);
-      // localStorage.setItem(code, json);
-      Students.push({
-        code: code,
-        name: name,
-        password: password,
-        confirmPassword: confirmPassword,
-        file: file,
-      });
-      alert("Sign Up Successfully");
-    } else {
-      alert("Please enter a valid code");
-    }
-  } else {
-    alert("Please enter a valid password");
-  }
 }

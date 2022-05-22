@@ -6,7 +6,7 @@ export default function Home() {
     <div
       className="    
         flex justify-center lg:justify-end items-center	text-white
-        h-[calc(100vh-70px)] bg-fixed bg-cover bg-center bg-no-repeat 
+        h-[100vh] bg-fixed bg-cover bg-center bg-no-repeat 
       "
       style={{ backgroundImage: `url(${background})` }}
     >

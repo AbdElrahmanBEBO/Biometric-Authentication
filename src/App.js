@@ -6,7 +6,7 @@ import { Navbar, Home, SignIn, SignUp, Courses, Reports, ViewCam } from './Pages
 export default function App() {
   return (
     <Router >      
-      <Navbar />
+      {/* <Navbar /> */}
 
       <Routes>
         <Route path='/' element={<Home />}/>
