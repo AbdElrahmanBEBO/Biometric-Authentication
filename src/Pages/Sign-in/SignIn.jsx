@@ -1,4 +1,5 @@
 import React from "react";
+
 import background from "../../assets/BG.jpg";
 import axios from "axios";
 
@@ -47,7 +48,7 @@ export default function SignIn() {
       <div className="lg:mr-[230px] flex flex-col">
         <div className="flex justify-between mb-3">
           <button
-            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-green-500":"bg-white hover:bg-white/[0.8]")  }
             onClick={() => {
               setInputType(true);
               setInputUrl("/instructors/login");
@@ -55,8 +56,8 @@ export default function SignIn() {
           >
             as Instructor
           </button>
-          <button
-            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+          <button        
+            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-white hover:bg-white/[0.8]":"bg-green-500") }
             onClick={() => {
               setInputType(false);
               setInputUrl("/students/login");

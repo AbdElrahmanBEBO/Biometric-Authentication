@@ -5,30 +5,39 @@ import axios from "axios";
 import { RiInsertRowBottom } from "react-icons/ri";
 
 export default function SignUp() {
+  const [inputType, setInputType] = React.useState(true);
+  const [inputUrl, setInputUrl] = React.useState("/instructor/signup");
 
   
-  const [inputType, setInputType] = React.useState(true);
+  const [instructorData, setInstructorData] = React.useState({
+    name: "",
+    password: "",
+  });
   const [StudentData, setStudentData] = React.useState({
     name: "",
     code: "",
     password: "",
   });
   
-  function Sign_Up() {
+  function Sign_Up(event) {
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
+    let dataInput = inputType ? instructorData : StudentData;
     axios
-    .post("/students/signup", StudentData)
+    .post(inputUrl, dataInput)
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
+    event.preventDefault();
   }
 
   function setData(event) {
     const { name, value } = event.target;
-    setStudentData((prevState) => {
-      return { ...prevState, [name]: value };
-    });
-  }
+    inputType
+      ? setInstructorData((prev) => ({ ...prev, [name]: value }))
+      : setStudentData((prev) => ({ ...prev, [name]: value }));
 
+  }
+  console.log(instructorData)
+  console.log(StudentData)
 
   return (
     <div
@@ -41,17 +50,19 @@ export default function SignUp() {
       <div className="lg:mr-[230px] flex flex-col">
         <div className="flex justify-between mb-3">
           <button
-            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-green-500":"bg-white hover:bg-white/[0.8]")  }
             onClick={() => {
               setInputType(true);
+              setInputUrl("/instructor/signup")
             }}
           >
             as Instructor
           </button>
           <button
-            className="bg-white w-[49%] p-2 rounded-sm font-bold hover:bg-white/[0.9]"
+            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-white hover:bg-white/[0.8]":"bg-green-500") }
             onClick={() => {
               setInputType(false);
+              setInputUrl("/students/signup")
             }}
           >
             as Student
