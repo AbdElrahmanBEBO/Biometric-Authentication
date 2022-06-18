@@ -16,7 +16,8 @@ export default function SignIn() {
     password: "",
   });
 
-  function LogIn() {
+  function LogIn(e) {
+    e.preventDefault();
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     let dataInput = inputType ? instructorState : studentState;
     axios
