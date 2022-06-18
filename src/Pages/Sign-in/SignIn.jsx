@@ -2,10 +2,14 @@ import React from "react";
 
 import background from "../../assets/BG.jpg";
 import axios from "axios";
+import { useDispatch } from "react-redux";
+import { setUser } from "../../redux/slices/userSlice";
+import { useNavigate } from "react-router-dom";
 
 export default function SignIn() {
   const [inputType, setInputType] = React.useState(true);
   const [inputUrl, setInputUrl] = React.useState("/instructors/login");
+  const dispath = useDispatch();
 
   const [instructorState, setInstructorState] = React.useState({
     name: "",
@@ -15,6 +19,7 @@ export default function SignIn() {
     code: "",
     password: "",
   });
+  const navigate = useNavigate();
 
   function LogIn(e) {
     e.preventDefault();
@@ -22,7 +27,25 @@ export default function SignIn() {
     let dataInput = inputType ? instructorState : studentState;
     axios
       .post(inputUrl, dataInput)
-      .then((response) => console.log(response))
+      .then((response) => {
+        const payload = {};
+        if (inputUrl === "/instructors/login") {
+          payload.name = instructorState.name;
+          payload.token = response.data.token;
+          payload.id = response.data.id;
+          dispath(setUser(payload));
+          navigate("/courses");
+          console.log(response, "from response");
+        } else {
+          payload.code = studentState.code;
+          payload.token = response.data.token;
+          dispath(setUser(payload));
+          console.log(response, "from response");
+        }
+        payload.token = response.data.token;
+        dispath(setUser(payload));
+        console.log(response, "from response");
+      })
       .catch((error) => console.log(error));
   }
 

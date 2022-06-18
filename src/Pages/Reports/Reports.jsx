@@ -1,14 +1,26 @@
+import axios from "axios";
 import React from "react";
+import { useEffect } from "react";
 
 //List and Check Icons
 import { MdFormatListBulleted } from "react-icons/md";
 import { RiNumber1 } from "react-icons/ri";
+import { useParams } from "react-router-dom";
+import { baseURL } from "../../api/constants";
 
 //Array of Students
 import Students from "./studentData";
 
 export default function Reports() {
+  const { courseID } = useParams();
+
   const [StudentsData, updateStudents] = React.useState(Students);
+
+  useEffect(() => {
+    const fetchReportQuery = axios
+      .get(`${baseURL}courses/${courseID}/attendance-report`)
+      .then((res) => console.log(res.data));
+  }, []);
 
   //Student Data Body (Row by Row)
   const StudentsBody = StudentsData.map((studenInfo) => {
@@ -30,7 +42,7 @@ export default function Reports() {
               {studenInfo.Code}
             </div>
             {studenInfo.Attendance[studenInfo.lastAttend - 1] && (
-              <div className="px-2 mx-3 rounded-lg bg-green-500 text-white" >
+              <div className="px-2 mx-3 rounded-lg bg-green-500 text-white">
                 {studenInfo.lastAttend}
               </div>
             )}
@@ -107,7 +119,10 @@ export default function Reports() {
 
             {/*  total attendance  */}
             <div className="2xl:hidden flex flex-col sm:flex-row items-center justify-between py-2 my-2">
-              <div className="mb-3"> total attendance:   {studenInfo. totalAttendance} </div>
+              <div className="mb-3">
+                {" "}
+                total attendance: {studenInfo.totalAttendance}{" "}
+              </div>
             </div>
           </div>
         )}
@@ -141,7 +156,7 @@ export default function Reports() {
           <th className="hidden 2xl:grid">Total Attendance</th>
         </tr>
       </thead>
-      <tbody >{StudentsBody}</tbody>
+      <tbody>{StudentsBody}</tbody>
     </table>
   );
 }
