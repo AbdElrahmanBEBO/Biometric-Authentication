@@ -1,0 +1,59 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+thead tr {
+    @apply grid grid-cols-4 my-3;
+}
+tbody tr {
+    @apply grid grid-cols-4;
+}
+
+tbody {
+    height: calc(100vh - 220px);
+    overflow-y: auto;
+}
+
+tbody tr td {
+    width: 100%; height: 100%;
+    @apply flex items-center py-4 px-4;
+    border: 1px solid black;
+    font-weight: 600;
+}
+
+.Attendance-Box div{
+    @apply mx-3 px-2 rounded-lg text-white;
+}
+
+.overflowX {
+    white-space: nowrap;
+    overflow-x : auto;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: black; 
+  border-radius: 25px;
+}
+
+.Navbar-Links a{
+    @apply flex text-teal-200 hover:text-white text-[13px] mr-3 sm:mr-6 sm:text-[16px];
+}
+.home-links a{
+    @apply flex justify-center font-bold text-xl m-2 p-2 rounded-sm bg-[orange] hover:bg-[orange]/[0.9] w-[90%];
+}
+
+.SignUp-Label {
+    @apply block text-gray-700 text-sm font-bold mb-2;
+}
+.SignUp-Input {
+    @apply  appearance-none border rounded w-full py-2 px-3
+     text-gray-700 leading-tight focus:outline-none focus:shadow-md;
+}
