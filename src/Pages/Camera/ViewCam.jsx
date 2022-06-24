@@ -18,7 +18,7 @@ export default function ViewCam() {
   };
 
   const sentShoots = async () => {
-    capture(1);
+    capture(5,2);
 
     // const file = imgSrc[0];
     // const fileName = file.name;
