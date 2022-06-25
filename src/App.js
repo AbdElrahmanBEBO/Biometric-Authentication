@@ -6,8 +6,9 @@ import {
   Home,
   SignIn,
   SignUp,
+  Student,
   Courses,
-  Reports,
+  Reports,  
   ViewCam,
 } from "./Pages";
 
@@ -24,6 +25,7 @@ export default function App() {
         />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/Student" element={<Student />} />
         <Route path="/ViewCam" element={<ViewCam />} />
         <Route path="/:courseID/report" element={<Reports />} />
         <Route path="*" />
