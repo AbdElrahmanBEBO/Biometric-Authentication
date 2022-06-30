@@ -8,7 +8,7 @@ export default function SignUp() {
   const [inputType, setInputType] = React.useState(true);
   const [inputUrl, setInputUrl] = React.useState("/instructor/signup");
   const fileRef = React.useRef();
-  
+
   const [instructorData, setInstructorData] = React.useState({
     name: "",
     password: "",
@@ -19,42 +19,45 @@ export default function SignUp() {
     imageURL: "",
     password: "",
   });
-  
-  async function Sign_Up() {
+
+  async function Sign_Up(e) {
+    e.preventDefault();
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     let dataInput = inputType ? instructorData : StudentData;
+    console.log(dataInput, "from dataInput before signing up");
 
     const file = fileRef.current.files[0];
-   
+    console.log(file, "from file");
     const fileName = file.name;
     const type = file.type;
-    const response = await fetch(`https://ey5anj8005.execute-api.us-east-2.amazonaws.com/dev/createpresignedurl/${fileName}?filetype=${type}`);
+    const response = await fetch(
+      `https://ey5anj8005.execute-api.us-east-2.amazonaws.com/dev/createpresignedurl/${fileName}?filetype=${type}`
+    );
     const presignedUrl = await response.json();
-   
+    console.log(presignedUrl.postURL, "from post url");
     fetch(presignedUrl.postURL, {
-      method: 'PUT',
+      method: "PUT",
       body: file,
       Headers: {
-        ContentType: type
-      }
-    }).then(res => {
-      
+        ContentType: type,
+      },
+    }).then((res) => {
       if (res.statusText === "OK") {
         dataInput.imageURL = presignedUrl.getURL;
+        console.log(dataInput, "from dataInput");
+        console.log(presignedUrl.getURL, "from get url");
         axios
           .post(inputUrl, dataInput)
-          .then((response) => console.log(response))
-          .catch((error) => console.log(error));
-            
+          .then((response) => alert(response.data.message))
+          .catch((error) => alert(error.message));
       }
-    })
+    });
   }
   function setData(event) {
     const { name, value } = event.target;
     inputType
       ? setInstructorData((prev) => ({ ...prev, [name]: value }))
       : setStudentData((prev) => ({ ...prev, [name]: value }));
-
   }
 
   return (
@@ -68,19 +71,25 @@ export default function SignUp() {
       <div className="lg:mr-[230px] flex flex-col">
         <div className="flex justify-between mb-3">
           <button
-            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-green-500":"bg-white hover:bg-white/[0.8]")  }
+            className={
+              " w-[49%] p-2 rounded-sm font-bold " +
+              (inputType ? "bg-green-500" : "bg-white hover:bg-white/[0.8]")
+            }
             onClick={() => {
               setInputType(true);
-              setInputUrl("/instructor/signup")
+              setInputUrl("/instructor/signup");
             }}
           >
             as Instructor
           </button>
           <button
-            className={" w-[49%] p-2 rounded-sm font-bold " +(inputType ? "bg-white hover:bg-white/[0.8]":"bg-green-500") }
+            className={
+              " w-[49%] p-2 rounded-sm font-bold " +
+              (inputType ? "bg-white hover:bg-white/[0.8]" : "bg-green-500")
+            }
             onClick={() => {
               setInputType(false);
-              setInputUrl("/students/signup")
+              setInputUrl("/students/signup");
             }}
           >
             as Student
@@ -90,7 +99,7 @@ export default function SignUp() {
         <form
           className="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 w-[350px]"
           onSubmit={Sign_Up}
-        >          
+        >
           <div className="mb-3">
             <label className="SignUp-Label">Name</label>
             <input
@@ -103,18 +112,18 @@ export default function SignUp() {
             />
           </div>
 
-          { (!inputType && 
-          <div className="mb-3">
-            <label className="SignUp-Label">Code</label>
-            <input
-              className="SignUp-Input"
-              name="code"
-              type="number"
-              placeholder="Code"
-              onChange={(event) => setData(event)}
-              required
-            />
-          </div>
+          {!inputType && (
+            <div className="mb-3">
+              <label className="SignUp-Label">Code</label>
+              <input
+                className="SignUp-Input"
+                name="code"
+                type="number"
+                placeholder="Code"
+                onChange={(event) => setData(event)}
+                required
+              />
+            </div>
           )}
           <div className="mb-3">
             <label className="SignUp-Label">Password</label>
@@ -128,10 +137,16 @@ export default function SignUp() {
             />
           </div>
 
-          {(!inputType &&
+          {!inputType && (
             <div className="mb-3">
               <label className="SignUp-Label">Choose your photos</label>
-              <input className="SignUp-Input" ref={fileRef} name="file" type="file" multiple />
+              <input
+                className="SignUp-Input"
+                ref={fileRef}
+                name="file"
+                type="file"
+                multiple
+              />
             </div>
           )}
 

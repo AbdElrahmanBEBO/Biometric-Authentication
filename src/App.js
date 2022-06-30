@@ -24,9 +24,8 @@ export default function App() {
         />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignIn" element={<SignIn />} />
-        <Route path="/ViewCam" element={<ViewCam />} />
+        <Route path="/:courseID/ViewCam" element={<ViewCam />} />
         <Route path="/:courseID/report" element={<Reports />} />
-        <Route path="*" />
       </Routes>
     </Router>
   );

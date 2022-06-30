@@ -21,6 +21,13 @@ export default function ListOfCourse(props) {
       >
         Students Report
       </Link>
+      <br />
+      <Link
+        to={`/${props.courseCode}/ViewCam`}
+        className="flex justify-center p-1 mr-5 my-4 lg:my-0 text-[15px] bg-green-500 rounded-md"
+      >
+        Start Session
+      </Link>
       <div className="flex justify-end">
         <div className="mr-5 text-[15px]">Created at: {props.dataCreated}</div>
         <RiDeleteBin5Line className="hover:text-red-400 self-center text-2xl" />
