@@ -10,6 +10,7 @@ import {
   Reports,
   ViewCam,
 } from "./Pages";
+import UserMainPage from "./Pages/UserMain";
 
 export default function App() {
   return (
@@ -24,6 +25,8 @@ export default function App() {
         />
         <Route path="/SignUp" element={<SignUp />} />
         <Route path="/SignIn" element={<SignIn />} />
+        <Route path="/user-main-page" element={<UserMainPage />} />
+
         <Route path="/:courseID/ViewCam" element={<ViewCam />} />
         <Route path="/:courseID/report" element={<Reports />} />
       </Routes>

@@ -41,12 +41,13 @@ export default function SignIn() {
           payload.token = response.data.token;
           dispath(setUser(payload));
           console.log(response, "from response");
+          navigate("/user-main-page");
         }
-        payload.token = response.data.token;
-        dispath(setUser(payload));
-        console.log(response, "from response");
       })
-      .catch((error) => console.log(error));
+      .catch((error) => {
+        alert(error.response.data.message);
+        console.log(error, "from error");
+      });
   }
 
   function setData(event) {

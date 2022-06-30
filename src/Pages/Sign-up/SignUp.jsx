@@ -1,14 +1,16 @@
-import React from "react";
-
+import React, { useRef } from "react";
 import background from "../../assets/BG.jpg";
 import axios from "axios";
 import { RiInsertRowBottom } from "react-icons/ri";
-
+import { v4 } from "uuid";
+import { downloadImg, uploadImg } from "../../api/firebase/firebaseStorage";
+import { useNavigate } from "react-router-dom";
 export default function SignUp() {
   const [inputType, setInputType] = React.useState(true);
   const [inputUrl, setInputUrl] = React.useState("/instructor/signup");
-  const fileRef = React.useRef();
-
+  const navigate = useNavigate();
+  const inputImgRef = useRef();
+  console.log(inputType, inputUrl, "f rom input type and input url");
   const [instructorData, setInstructorData] = React.useState({
     name: "",
     password: "",
@@ -24,40 +26,60 @@ export default function SignUp() {
     e.preventDefault();
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
     let dataInput = inputType ? instructorData : StudentData;
-    console.log(dataInput, "from dataInput before signing up");
+    if (inputType) {
+      // then he is an instructor
+      axios
+        .post(inputUrl, dataInput)
+        .then((res) => {
+          alert(res.data.message);
+          navigate("/SignIn");
+        })
+        .catch((err) => alert(err.response.data.message));
 
-    const file = fileRef.current.files[0];
-    console.log(file, "from file");
-    const fileName = file.name;
-    const type = file.type;
-    const response = await fetch(
-      `https://ey5anj8005.execute-api.us-east-2.amazonaws.com/dev/createpresignedurl/${fileName}?filetype=${type}`
-    );
-    const presignedUrl = await response.json();
-    console.log(presignedUrl.postURL, "from post url");
-    fetch(presignedUrl.postURL, {
-      method: "PUT",
-      body: file,
-      Headers: {
-        ContentType: type,
-      },
-    }).then((res) => {
-      if (res.statusText === "OK") {
-        dataInput.imageURL = presignedUrl.getURL;
-        console.log(dataInput, "from dataInput");
-        console.log(presignedUrl.getURL, "from get url");
-        axios
-          .post(inputUrl, dataInput)
-          .then((response) => alert(response.data.message))
-          .catch((error) => alert(error.message));
-      }
-    });
+      return;
+    }
+
+    console.log("from signing up a student");
+    if (!inputType) {
+      // then he is a student
+      console.log("from signing up a student");
+      const file = inputImgRef.current.files[0];
+
+      const imgURL = await uploadPostImg(file);
+      console.log(imgURL, "from image url");
+      dataInput.imageURL = imgURL;
+      axios
+        .post(inputUrl, dataInput)
+        .then((response) => {
+          alert(response.data.message);
+          navigate("/SignIn");
+        })
+        .catch((error) => alert(error.response.data.message));
+    }
   }
   function setData(event) {
     const { name, value } = event.target;
     inputType
       ? setInstructorData((prev) => ({ ...prev, [name]: value }))
       : setStudentData((prev) => ({ ...prev, [name]: value }));
+  }
+
+  async function getThefile(e) {
+    try {
+      e.stopPropagation();
+      e.preventDefault();
+
+      await uploadPostImg(e.target.files[0]);
+    } catch (errImg) {}
+  }
+
+  async function uploadPostImg(file) {
+    try {
+      const imgId = v4();
+      const res = await uploadImg(file, `${imgId}`);
+      const resUrl = await downloadImg(imgId);
+      return resUrl;
+    } catch (error) {}
   }
 
   return (
@@ -140,12 +162,19 @@ export default function SignUp() {
           {!inputType && (
             <div className="mb-3">
               <label className="SignUp-Label">Choose your photos</label>
-              <input
+              {/* <input
                 className="SignUp-Input"
                 ref={fileRef}
                 name="file"
                 type="file"
                 multiple
+              /> */}
+              <input
+                className="SignUp-Input"
+                ref={inputImgRef}
+                name="file"
+                type="file"
+                onChange={getThefile}
               />
             </div>
           )}
