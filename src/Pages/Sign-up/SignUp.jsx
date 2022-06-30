@@ -1,9 +1,9 @@
-import React from "react";
-
+import React, { useRef } from "react";
 import background from "../../assets/BG.jpg";
 import axios from "axios";
 import { RiInsertRowBottom } from "react-icons/ri";
-
+import { v4 } from "uuid";
+import {downloadImg, uploadImg} from '../../api/firebase/firebaseStorage'
 export default function SignUp() {
   const [inputType, setInputType] = React.useState(true);
   const [inputUrl, setInputUrl] = React.useState("/instructor/signup");
@@ -19,7 +19,7 @@ export default function SignUp() {
     imageURL: "",
     password: "",
   });
-
+  
   async function Sign_Up(e) {
     e.preventDefault();
     axios.defaults.baseURL = "https://damp-brook-82087.herokuapp.com/";
@@ -58,6 +58,28 @@ export default function SignUp() {
     inputType
       ? setInstructorData((prev) => ({ ...prev, [name]: value }))
       : setStudentData((prev) => ({ ...prev, [name]: value }));
+  }
+
+
+  const inputImgRef = useRef()
+  
+  async function getThefile(e) {
+    try {
+      e.stopPropagation();
+      e.preventDefault();
+
+      await uploadPostImg(e.target.files[0]);
+    } catch (errImg) {
+    }
+  }
+
+  async function uploadPostImg(file) {
+    try {
+        const imgId = v4()
+        const res = await uploadImg(file, `${imgId}`)
+        const resUrl = await downloadImg(imgId)
+    } catch (error) {
+    }
   }
 
   return (
@@ -140,12 +162,19 @@ export default function SignUp() {
           {!inputType && (
             <div className="mb-3">
               <label className="SignUp-Label">Choose your photos</label>
-              <input
+              {/* <input
                 className="SignUp-Input"
                 ref={fileRef}
                 name="file"
                 type="file"
                 multiple
+              /> */}
+              <input
+                className="SignUp-Input"
+                ref={inputImgRef}
+                name="file"
+                type="file"
+                onChange={getThefile}
               />
             </div>
           )}
